@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model PrintingJob {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  paperType  String
+  width      Float
+  height     Float
+  quantity   Int
+  isCutting  Boolean
+  isDesign   Boolean
+  fileName   String?
+  totalPrice Float
+  pdfUrl     String?
+  status     String   @default("pending")
+}
+
+model Pricing {
+  id          Int    @id @default(autoincrement())
+  paperType   String
+  range1_2    Float
+  range3_19   Float
+  range20_59  Float
+  range60_99  Float
+  range100    Float
+  cuttingCost Float
+  designCost  Float
+}
