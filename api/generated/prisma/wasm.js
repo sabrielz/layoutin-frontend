@@ -126,10 +126,7 @@ exports.Prisma.PrintingJobScalarFieldEnum = {
   quantity: 'quantity',
   isCutting: 'isCutting',
   isDesign: 'isDesign',
-  fileName: 'fileName',
-  totalPrice: 'totalPrice',
-  pdfUrl: 'pdfUrl',
-  status: 'status'
+  totalPrice: 'totalPrice'
 };
 
 exports.Prisma.PricingScalarFieldEnum = {
@@ -149,16 +146,8 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
-};
-
 exports.Prisma.PrintingJobOrderByRelevanceFieldEnum = {
-  paperType: 'paperType',
-  fileName: 'fileName',
-  pdfUrl: 'pdfUrl',
-  status: 'status'
+  paperType: 'paperType'
 };
 
 exports.Prisma.PricingOrderByRelevanceFieldEnum = {

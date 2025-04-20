@@ -106,7 +106,27 @@ function prosesData() {
     tampilHasil();  
 
     gambarPDF(avatarImg, y, x);
- 
+
+    createPrintingJob({
+      paperType: bahan,
+      width: parseFloat(lebar) / 10,
+      height: parseFloat(tinggi) / 10,
+      quantity: parseInt(pcs),
+      isCutting: document.getElementById("input_potong").checked,
+      isDesign: document.getElementById("input_desain").checked,
+    })
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log('Success:', data);
+    initData();
+    // Optionally, update the UI to reflect the successful upload
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Optionally, display an error message to the user
+  });
 }
 
 function cekBiayaPotong(bahan, pcs) {
@@ -210,5 +230,37 @@ function unduhPDF() {
     doc.save(namalengkap);
 }
 
+function initSelect() {
+    fetchSelectBahanData().then(data => {
+        let select = document.getElementById("input_bahan");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+}
+initSelect();
 
+function initData() {
+    getPrintingJobs().then(data => {
+        $('#printing-jobs').DataTable({
+            data: data,
+            columns: [
+                { data: 'id' },
+                { data: 'paperType' },
+                { data: 'width' },
+                { data: 'height' },
+                { data: 'quantity' },
+                { data: 'totalPrice' },
+                { data: 'createdAt' },
+            ]
+        })
+    })
+}
+initData();
 
+// $(document).ready(function () {
+    
+// });

@@ -865,3 +865,18 @@ function landscape() {
     paper.style.height = "371px";
     orientasi = 'l';
 }
+
+
+
+function initSelect() {
+    fetchSelectBindTypeData().then(data => {
+        let select = document.getElementById("input_jenis");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+}
+initSelect();

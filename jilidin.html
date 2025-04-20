@@ -33,9 +33,9 @@
                     <img src="img/kalenderin_logo.png" alt="Logo Layout">
                 </div>
             </a>
-            
+
             <a href="#">
-                <div  style="background-color: #a74000;">
+                <div style="background-color: #a74000;">
                     <img src="img/jilidin_logo.png" alt="Logo Layout">
                 </div>
             </a>
@@ -52,7 +52,7 @@
                     <h4>Jenis & Ukuran Jilid :</h4>
                     <select class="inputan" name='jenis_jilid' id="input_jenis" onchange="jenisJilid()">
                         <option value='n'>--Pilih Jenis & Ukuran Jilid--</option>
-                        <option value='ja3'>Jilid Spiral A3 Horizontal</option>
+                        <!-- <option value='ja3'>Jilid Spiral A3 Horizontal</option>
                         <option value='ja4'>Jilid Spiral A4 Horizontal</option>
                         <option value='ja5'>Jilid Spiral A5 Horizontal</option>
                         <option value='ja6'>Jilid Spiral A6 Horizontal</option>
@@ -67,11 +67,11 @@
                         <option value='ja3bv'>Jilid Spiral A3 2 Muka Vertikal</option>
                         <option value='ja4bv'>Jilid Spiral A4 2 Muka Vertikal</option>
                         <option value='ja5bv'>Jilid Spiral A5 2 Muka Vertikal</option>
-                        <option value='ja6bv'>Jilid Spiral A6 2 Muka Vertikal</option>
+                        <option value='ja6bv'>Jilid Spiral A6 2 Muka Vertikal</option> -->
                     </select>
                     <h4>Input Gambar (JPEG/PNG) :</h4>
-                    <input onchange="readURL(this)" class="inputan" type="file" id="file-to-upload" accept="image/jpeg, image/png, image/jpg"
-                        multiple />
+                    <input onchange="readURL(this)" class="inputan" type="file" id="file-to-upload"
+                        accept="image/jpeg, image/png, image/jpg" multiple />
                     <div id="dimensi" style="margin-top: 10px; margin-bottom: 10px;">
                         <h4>Warna Garis Potong :</h4>
                         <label class="switch">
@@ -101,11 +101,10 @@
                     <input id="unduh" type="submit" value="KOMPRES PDF" onclick="compressPDF()"
                         style="display: inline;">
                 </div>
-
             </div>
-
         </div>
     </div>
+    <script src="js/apiService.js"></script>
     <script src="js/jilid.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/jspdf.debug.js"></script>

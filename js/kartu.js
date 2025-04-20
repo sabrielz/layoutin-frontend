@@ -338,3 +338,17 @@ function landscape() {
 function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
+
+
+function initSelect() {
+    fetchSelectCardTypeData().then(data => {
+        let select = document.getElementById("input_jenis");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+}
+initSelect();

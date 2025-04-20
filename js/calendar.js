@@ -308,3 +308,16 @@ function unduhPDF() {
 function compressPDF() {
     window.open("https://www.ilovepdf.com/compress_pdf");
 }
+
+function initSelect() {
+    fetchSelectCalendarTypeData().then(data => {
+        let select = document.getElementById("input_jenis");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+}
+initSelect();

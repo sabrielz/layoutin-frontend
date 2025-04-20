@@ -1,5 +1,19 @@
 # Layoutin API Backend
 
+## Project Structure
+
+```
+api/
+├── controllers/         # Route controllers
+├── middlewares/         # Express middlewares
+├── repositories/        # Database operations
+├── routes/              # Route definitions
+├── services/            # Business logic
+├── utils/               # Shared utilities
+├── index.js             # Main application entry
+└── README.md
+```
+
 ## Setup Instructions
 
 1. Install dependencies:
@@ -11,78 +25,58 @@ npm install
 2. Set up database:
 
 - Create a MySQL database
-- Update `.env` file with your database URL:
+- Update `.env` file:
 
 ```
 DATABASE_URL="mysql://USER:PASSWORD@HOST:PORT/DB_NAME?schema=layoutin"
 ```
 
-3. Run database migrations:
+3. Run migrations:
 
 ```bash
 npm run prisma:migrate
 ```
 
-4. Seed initial data:
+4. Seed data:
 
 ```bash
 npm run prisma:seed
 ```
 
-## Running the Server
+## Development
 
-Development (with hot reload):
+Start dev server:
 
 ```bash
 npm run dev
 ```
 
-Production:
-
-```bash
-npm start
-```
-
 ## API Endpoints
 
-### Printing Jobs
+### Printing Jobs (`/api/jobs`)
 
-- `POST /api/jobs` - Create new printing job
-- `GET /api/jobs` - List all jobs
-- `GET /api/jobs/:id` - Get specific job
-- `PUT /api/jobs/:id` - Update job
-- `DELETE /api/jobs/:id` - Delete job
+- `POST /` - Create job
+- `GET /` - List all jobs
+- `GET /:id` - Get job by ID
+- `PUT /:id` - Update job
+- `DELETE /:id` - Delete job
+- `POST /generate-pdf` - Generate PDF
 
-### PDF Generation
+### Pricing (`/api/pricing`)
 
-- `POST /api/generate-pdf` - Generate PDF (placeholder)
+- `GET /` - Get all pricing data
 
-### Documentation
+### Materials (`/api/bahan`)
 
-- `GET /api-docs` - View API documentation
+- `GET /` - List available materials
 
-## Environment Variables
+## Code Organization
 
-- `PORT` - Server port (default: 3000)
-- `DATABASE_URL` - MySQL connection string
-
-## Frontend Integration
-
-Replace localStorage calls with API requests:
-
-```javascript
-// Example: Saving a printing job
-async function savePrintingJob(jobData) {
-  const response = await fetch("http://localhost:3000/api/jobs", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(jobData),
-  });
-  return await response.json();
-}
-```
+- **Routes**: Define endpoints and middleware chains
+- **Controllers**: Handle HTTP requests/responses
+- **Services**: Contain business logic
+- **Repositories**: Handle database operations
+- **Middlewares**: Request validation and processing
 
 ## Deployment
 

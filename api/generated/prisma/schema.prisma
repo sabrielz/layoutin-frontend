@@ -20,10 +20,7 @@ model PrintingJob {
   quantity   Int
   isCutting  Boolean
   isDesign   Boolean
-  fileName   String?
-  totalPrice Float
-  pdfUrl     String?
-  status     String   @default("pending")
+  totalPrice Float    @default(0)
 }
 
 model Pricing {

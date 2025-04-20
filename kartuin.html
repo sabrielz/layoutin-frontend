@@ -34,7 +34,7 @@
                     <img src="img/kalenderin_logo.png" alt="Logo Layout">
                 </div>
             </a>
-            
+
             <a href="jilidin.html">
                 <div>
                     <img src="img/jilidin_logo.png" alt="Logo Layout">
@@ -52,16 +52,18 @@
                 <div>
                     <h4>Jenis Kartu Nama :</h4>
                     <select class="inputan" name='jenis_kartu' id="input_jenis" onchange="jenisKartu()">
-                        <option value='' >--Pilih Jenis Kartu Nama--</option>
-                        <option value='knh1'>Kartu Nama 1 Muka Horizotal</option>
+                        <option value=''>--Pilih Jenis Kartu Nama--</option>
+                        <!-- <option value='knh1'>Kartu Nama 1 Muka Horizotal</option>
                         <option value='knh2'>Kartu Nama 2 Muka Horizotal</option>
                         <option value='knv1'>Kartu Nama 1 Muka Vertikal</option>
-                        <option value='knv2'>Kartu Nama 2 Muka Vertikal</option>
+                        <option value='knv2'>Kartu Nama 2 Muka Vertikal</option> -->
                     </select>
                     <h4>Gambar Depan :</h4>
-                    <input id="input_gambar1" class="inputan" type="file" onchange="readURL(this);" accept="image/jpeg,image/png/image/JPG">
+                    <input id="input_gambar1" class="inputan" type="file" onchange="readURL(this);"
+                        accept="image/jpeg,image/png/image/JPG">
                     <h4 style="display: none;" id="text-img2">Gambar Belakang :</h4>
-                    <input style="display: none;" id="input_gambar2" class="inputan" type="file" onchange="readURL2(this);" accept="image/jpeg,image/png/image/JPG">
+                    <input style="display: none;" id="input_gambar2" class="inputan" type="file"
+                        onchange="readURL2(this);" accept="image/jpeg,image/png/image/JPG">
                     <div id="dimensi" style="margin-top: 10px; margin-bottom: 10px;">
                         <h4>Warna Garis Potong :</h4>
                         <label class="switch">
@@ -76,8 +78,10 @@
         <div id="layout">
             <h2>Layout</h2>
             <div id="canvas">
-                <img style="height: 73.333px; width: 120px;" src="img/preview.png" id="img-preview1" class="image-preview" alt="FOTO">
-                <img style="display: none; height: 120px; width: 73.333px;" id="img-preview2" src="img/preview.png" class="image-preview" alt="FOTO">
+                <img style="height: 73.333px; width: 120px;" src="img/preview.png" id="img-preview1"
+                    class="image-preview" alt="FOTO">
+                <img style="display: none; height: 120px; width: 73.333px;" id="img-preview2" src="img/preview.png"
+                    class="image-preview" alt="FOTO">
                 <iframe style="height: 371px; width: 561px;" id="iframepdf"></iframe>
             </div>
         </div>
@@ -101,6 +105,7 @@
             <input id="unduh" type="submit" value="UNDUH & Auto Rename" onclick="unduhPDF()">
         </div>
     </div>
+    <script src="js/apiService.js"></script>
     <script src="js/kartu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>

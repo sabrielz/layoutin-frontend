@@ -283,3 +283,27 @@ function cekHarga2(sqty) {
         hargaA3 = 0;
     }
 }
+
+
+function initSelect() {
+    fetchSelectCustomerTypeData().then(data => {
+        let select = document.getElementById("input_cost");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+
+    fetchSelectPaperTypeData().then(data => {
+        let select = document.getElementById("input_bahan");
+        for (let i = 0; i < data.length; i++) {
+            let option = document.createElement("option");
+            option.value = data[i].value;
+            option.text = data[i].label;
+            select.add(option);
+        }
+    })
+}
+initSelect();

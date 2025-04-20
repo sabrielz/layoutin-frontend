@@ -288,3 +288,31 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.job-actions {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+}
+
+#job-search {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+
+#job-status-filter {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.printing-jobs-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    max-width: 1080px;
+}

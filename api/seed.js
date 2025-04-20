@@ -1,4 +1,4 @@
-const { PrismaClient } = require("./generated/prisma/client");
+const { PrismaClient } = require('./generated/prisma/client');
 const prisma = new PrismaClient();
 
 async function seed() {
@@ -8,7 +8,7 @@ async function seed() {
   // Seed pricing data matching a3.js
   const pricingData = [
     {
-      paperType: "hvs",
+      paperType: 'hvs',
       range1_2: 5000,
       range3_19: 3500,
       range20_59: 2750,
@@ -18,7 +18,7 @@ async function seed() {
       designCost: 20000,
     },
     {
-      paperType: "ap",
+      paperType: 'ap',
       range1_2: 5000,
       range3_19: 3500,
       range20_59: 2750,
@@ -28,7 +28,7 @@ async function seed() {
       designCost: 20000,
     },
     {
-      paperType: "ac",
+      paperType: 'ac',
       range1_2: 5000,
       range3_19: 4000,
       range20_59: 3500,
@@ -38,7 +38,7 @@ async function seed() {
       designCost: 20000,
     },
     {
-      paperType: "fc",
+      paperType: 'fc',
       range1_2: 5500,
       range3_19: 4500,
       range20_59: 4000,
@@ -48,7 +48,7 @@ async function seed() {
       designCost: 20000,
     },
     {
-      paperType: "sc",
+      paperType: 'sc',
       range1_2: 5500,
       range3_19: 4250,
       range20_59: 4000,
@@ -58,7 +58,7 @@ async function seed() {
       designCost: 20000,
     },
     {
-      paperType: "sv",
+      paperType: 'sv',
       range1_2: 9000,
       range3_19: 8000,
       range20_59: 7500,
@@ -73,7 +73,7 @@ async function seed() {
     await prisma.pricing.create({ data });
   }
 
-  console.log("Database seeded successfully");
+  console.log('Database seeded successfully');
 }
 
 seed()
